@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { PokemonInterface } from '../../models/pokemon';
+import { PokemonInterface } from '../../interfaces/pokemon';
 import { DecimalPipe } from '@angular/common';
 
 @Component({

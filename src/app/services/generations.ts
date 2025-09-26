@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GenerationsInterface } from '../models/generations';
+import { GenerationsInterface } from '../interfaces/generations';
 
 @Injectable({
   providedIn: 'root'

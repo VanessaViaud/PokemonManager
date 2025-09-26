@@ -1,21 +1,58 @@
+<div class="block">
 <div class="columns">
   <div class="column">
     <p>Dans l'ordre du Pokédex :</p>
-    <p>{{compte}} Pokémons en base de données</p> 
-   @if (pokemonSelectionne) {
-   <p>Le Pokémon sélectionné 
-est : {{pokemonSelectionne}}</p> }
+    <p>{{ compte }} Pokémons en base de données</p>
+    @if (pokemonSelectionne) {
+    <p>Le Pokémon sélectionné est : {{ pokemonSelectionne }}</p>
+    }
   </div>
 </div>
-<div class="columns is-multiline">
-  @for (pokemon of pokemons; track pokemon.id) {
-  <ul class="menu-list column is-one-third">
-    <li>
-      <app-pokemon 
-    [pokemon]="pokemon" 
-    (evenementClicImage)="pokemonSelectionne=$event">
-  </app-pokemon>
-    </li>
-  </ul>
+
+<div class="columns">
+  <div class="column is-two-third">
+    <form [formGroup]="formRecherchePokemon">
+      <div class="field has-addons">
+        <div class="control has-icons-left">
+          <input
+            class="input is-small"
+            name="pokemonRecherche"
+            type="test"
+            placeholder="Nom du Pokémon"
+            formControlName="recherche"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-search"></i>
+          </span>
+        </div>
+        <div class="control">
+          <button
+            class="button is-info is-small"
+            (click)="onSubmit()"
+            [disabled]="formRecherchePokemon.invalid"
+          >
+            Rechercher
+          </button>
+        </div>
+        <div class="control">
+          <button class="button is-warning is-small" (click)="annulerRecherche()">Annuler</button>
+        </div>
+      </div>
+    </form>
+  
+  @if (pokemons.length<1) {
+  <div>Aucun Pokémon trouvé</div>
   }
+  </div>
 </div>
+  <div class="columns is-multiline">
+    @for (pokemon of pokemons; track pokemon.id) {
+    <ul class="menu-list column is-one-third">
+      <li>
+        <app-pokemon [pokemon]="pokemon" (evenementClicImage)="pokemonSelectionne = $event">
+        </app-pokemon>
+      </li>
+    </ul>
+    }
+  </div>
+</div> 

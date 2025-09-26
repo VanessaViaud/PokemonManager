@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { GenerationsService } from '../../services/generations';
-import { GenerationsInterface } from '../../models/generations';
+import { GenerationsInterface } from '../../interfaces/generations';
 
 @Component({
   selector: 'app-generations',

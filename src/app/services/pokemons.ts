@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PokemonInterface } from '../models/pokemon';
+import { PokemonInterface } from '../interfaces/pokemon';
 
 @Injectable({
   providedIn: 'root',
@@ -62,11 +62,16 @@ export class PokemonsService {
     },
   ];
 
-   getPokemons() {
+  getPokemons() {
     return this.pokemons;
   }
 
   comptagePokemons() {
     return this.pokemons.length;
+  }
+
+  rechercherPokemon(nomDuPokemon: string) {
+    let regex = new RegExp(nomDuPokemon, 'gi');
+    return this.pokemons.filter((pokemon) => pokemon.name.match(regex));
   }
 }
