@@ -24,7 +24,7 @@ export class GenerationsService {
     },
   ]
 
-  static getGenerations(): GenerationsInterface[] {
-    return this.prototype.generations;
+  getGenerations() {
+    return this.generations;
   }
 }

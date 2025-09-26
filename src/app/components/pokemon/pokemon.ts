@@ -2,8 +2,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PokemonInterface } from '../../models/pokemon';
 import { DecimalPipe } from '@angular/common';
 
-
-
 @Component({
   selector: 'app-pokemon',
   standalone: true,

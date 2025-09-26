@@ -62,7 +62,11 @@ export class PokemonsService {
     },
   ];
 
-  static getPokemons(): PokemonInterface[] {
-    return this.prototype.pokemons;
+   getPokemons() {
+    return this.pokemons;
+  }
+
+  comptagePokemons() {
+    return this.pokemons.length;
   }
 }

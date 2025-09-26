@@ -10,10 +10,11 @@ import { GenerationsInterface } from '../../models/generations';
   styleUrls: ['./generations.scss'],
 })
 export class Generations {
-
   generations: GenerationsInterface[] = [];
-  ngOnInit() {
-    this.generations = GenerationsService.getGenerations();
 
+  constructor(private serviceGenerations: GenerationsService) {}
+
+  ngOnInit() {
+    this.generations = this.serviceGenerations.getGenerations();
   }
 }
