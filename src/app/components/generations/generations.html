@@ -1,1 +1,12 @@
-<p>generations works!</p>
+<div class="container"> 
+   <h2>Générations de Pokémon : </h2>
+   <hr>
+<div class="menu">
+  <p class="menu-label">Générations de Pokémons</p>
+  <ul class="menu-list">
+    @for (item of generations; track item.id) {
+    <li>{{ item.name }}</li>
+    }
+  </ul>
+</div>
+</div>

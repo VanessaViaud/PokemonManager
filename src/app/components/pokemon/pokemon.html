@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Détails du Pokémon :</h2>
+  <hr />
+  <div class="menu">
+    <img src="{{ pokemon.img }}" (clic)="clicSurImage(pokemon.name)" />
+    <a class="menu-label">{{ pokemon.name }}</a>
+    <ul class="menu-list">
+      <li>{{ pokemon.description }}</li>
+      <li>{{ pokemon.types.join(', ') }}</li>
+      <li>{{ pokemon.height | number : '1.1-2' }} m</li>
+      @if(!pokemon.weight) {
+      <li>N/A</li>
+      } @else {
+      <li>{{ pokemon.weight | number : '1.1-2' }} kg</li>
+      }
+    </ul>
+  </div>
+</div>
