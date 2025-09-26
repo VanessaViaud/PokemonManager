@@ -1,0 +1,10 @@
+<form class="login-form">
+  <h2>Connexion</h2>
+  <label>Email</label>
+  <input type="email" [(ngModel)]="email" name="email" required>
+  <label>Mot de passe</label>
+  <input type="password" [(ngModel)]="password" name="password" required>
+  <button (click)="onLogin()">Se connecter</button>
+  <div *ngIf="error" class="error">{{error}}</div>
+  <a routerLink="/register">Pas de compte ? S'inscrire</a>
+</form>

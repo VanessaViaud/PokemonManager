@@ -1,0 +1,10 @@
+<form class="register-form">
+  <h2>Inscription</h2>
+  <label>Email</label>
+  <input type="email" [(ngModel)]="email" name="email" required>
+  <label>Mot de passe</label>
+  <input type="password" [(ngModel)]="password" name="password" required>
+  <button (click)="onRegister()">S'inscrire</button>
+  <div *ngIf="error" class="error">{{error}}</div>
+  <a routerLink="/login">Déjà un compte ? Se connecter</a>
+</form>
